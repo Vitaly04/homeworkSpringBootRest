@@ -6,6 +6,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import ru.netology.homeworkspringbootrest.controller.AuthorizationController;
 import ru.netology.homeworkspringbootrest.repository.UserRepository;
 import ru.netology.homeworkspringbootrest.service.AuthorizationService;
+import ru.netology.homeworkspringbootrest.user.User;
+import ru.netology.homeworkspringbootrest.user.UserHandlerMethodArgumentResolver;
 
 @SpringBootApplication
 public class HomeworkSpringBootRestApplication {
@@ -15,5 +17,8 @@ public class HomeworkSpringBootRestApplication {
 
         AuthorizationService authorizationService = context.getBean(AuthorizationService.class);
         UserRepository userRepository = context.getBean(UserRepository.class);
+        User user = context.getBean(User.class);
+        UserHandlerMethodArgumentResolver userHandlerMethodArgumentResolver = context.getBean(UserHandlerMethodArgumentResolver.class);
+
     }
 }
